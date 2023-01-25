@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShapesApp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="50"
+            Padding="50,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="approov.png"
+                SemanticProperties.Description="Approov logo"
+                x:Name="logoImage" HeightRequest="260" />
+
+            <Label
+                Text="Get Hello or Get Shape"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="18"
+                x:Name="textMessage"
+                HorizontalOptions="Center" />
+
+            <HorizontalStackLayout Margin="20"
+                           Spacing="100">
+
+            <Button
+                x:Name="helloBtn"
+                Text="Get Hello"
+                SemanticProperties.Hint="Gets a Hello from Shapes Server"
+                Clicked="OnHelloButtonClicked" />
+
+            <Button
+                x:Name="shapeButton"
+                Text="Get Shape"
+                SemanticProperties.Hint="Gets a random shape"
+                Clicked="OnShapeButtonClicked" />
+
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
+
