@@ -1,5 +1,8 @@
 ﻿using Newtonsoft.Json;
+/* COMMENT out the line to use Approov SDK */
 using System.Net.Http;
+/* UNCOMMENT the lines bellow to use Approov SDK */
+//using Approov;
 namespace ShapesApp;
 
 public partial class MainPage : ContentPage
@@ -18,8 +21,8 @@ public partial class MainPage : ContentPage
     //private static ApproovHttpClient httpClient;
 
     public MainPage()
-	{
-        InitializeComponent(); 
+    {
+        InitializeComponent();
         /* COMMENT out the line to use Approov SDK */
         httpClient = new HttpClient();
         /* UNCOMMENT the lines bellow to use Approov SDK */
@@ -28,38 +31,44 @@ public partial class MainPage : ContentPage
         // Add substitution header: Uncomment if using SECRETS-PROTECTION
         //ApproovService.AddSubstitutionHeader("Api-Key", null);
         httpClient.DefaultRequestHeaders.Add("Api-Key", shapes_api_key);
-        
-	}
 
-	private async void OnHelloButtonClicked(object sender, EventArgs e)
-	{
-		Console.WriteLine("HelloButton clicked!");
+    }
+
+    private async void OnHelloButtonClicked(object sender, EventArgs e)
+    {
+        Console.WriteLine("HelloButton clicked!");
         HttpResponseMessage response;
-        try {
+        try
+        {
             response = await httpClient.GetAsync(helloURL).ConfigureAwait(false);
             if (response.IsSuccessStatusCode)
             {
                 var cont = await response.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<Dictionary<string, string>>(cont);
-                if (values.ContainsKey("text")) {
+                if (values.ContainsKey("text"))
+                {
                     // Set status image
                     Application.Current.MainPage.Dispatcher.Dispatch(() => logoImage.Source = "hello.png");
                     // Set status label
                     Application.Current.MainPage.Dispatcher.Dispatch(() => textMessage.Text = values["text"]);
                 }
-            } else {
+            }
+            else
+            {
                 // Set status image
                 Application.Current.MainPage.Dispatcher.Dispatch(() => logoImage.Source = "confused.png");
                 // Set status label
                 Application.Current.MainPage.Dispatcher.Dispatch(() => textMessage.Text = "Error getting Hello from Shapes server");
             }
-        } catch (Exception ex) {
+        }
+        catch (Exception ex)
+        {
             // Set status image
             Application.Current.MainPage.Dispatcher.Dispatch(() => logoImage.Source = "confused.png");
             // Set status label
             Application.Current.MainPage.Dispatcher.Dispatch(() => textMessage.Text = "Exception getting Hello from Shapes server");
         }
-	}
+    }
 
     private async void OnShapeButtonClicked(System.Object sender, System.EventArgs e)
     {
@@ -99,5 +108,3 @@ public partial class MainPage : ContentPage
     }
 
 }
-
-
