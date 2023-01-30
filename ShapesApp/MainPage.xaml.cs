@@ -1,5 +1,8 @@
 ﻿using Newtonsoft.Json;
+/* COMMENT out the line to use Approov SDK */
 using System.Net.Http;
+/* UNCOMMENT the lines bellow to use Approov SDK */
+//using Approov;
 namespace ShapesApp;
 
 public partial class MainPage : ContentPage
