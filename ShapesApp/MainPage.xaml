@@ -22,7 +22,7 @@
                 HorizontalOptions="Center" />
 
             <HorizontalStackLayout Margin="20"
-                           Spacing="100">
+                           Spacing="50">
 
             <Button
                 x:Name="helloBtn"
