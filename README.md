@@ -1,23 +1,26 @@
-# APPROOV QUICKSTARTS: XAMARIN HTTPCLIENT
+# APPROOV QUICKSTARTS: .NET HTTPCLIENT
 
-This quickstart is written specifically for mobile iOS and Android apps that are written in C# for making the API calls that you wish to protect with Approov. The sample code shown in this guide makes use of HttpClient in order to access network resources. If this is not your situation then check if there is a more relevant quickstart guide available.
+This quickstart is written specifically for mobile iOS and Android apps that are written in C# and .NET for making the API calls that you wish to protect with Approov. The sample code shown in this guide makes use of HttpClient in order to access network resources. If this is not your situation then check if there is a more relevant quickstart guide available.
 
-This quickstart provides the basic steps for integrating Approov into your app. A more detailed step-by-step guide using a [Shapes App Example](https://github.com/approov/quickstart-xamarin-httpclient/blob/master/SHAPES-EXAMPLE.md) is also available.
+This quickstart provides the basic steps for integrating Approov into your app. A more detailed step-by-step guide using a [Shapes App Example](https://github.com/approov/quickstart-net-maui/blob/master/SHAPES-EXAMPLE.md) is also available.
 
 To follow this guide you should have received an onboarding email for a trial or paid Approov account.
 
 Note that the minimum OS requirement for iOS is 10 and for Android the minimum SDK version is 21 (Android 5.0). You cannot use Approov in apps that need to support OS versions older than this.
-We will use the latest versions of the `nuget.org` packages, `ApproovSDK-3.0.0` and `ApproovHttpClient-3.0.7`.  
-> **WARNING Obsolete dependency**: The package `ApproovHttpClient-Platform-Specific` has been obsoleted and should not be used any longer.
+We will use the latest versions of the `nuget.org` package, `ApproovService-3.1.0`.  
 
 
-## ADDING THE APPROOV SERVICE AND THE APPROOV SDK
+## ADDING THE APPROOV SERVICE PACKAGE
 
-The Approov SDK makes use of a custom `HttpClient` implementation, `ApproovHttpClient` and it is available as a NuGet package in the default repository `nuget.org`. The `ApproovHttpClient` includes platform specific code in the `ApproovService` class. The `ShapesApp.Android` and `ShapesApp.iOS` projects require the `ApproovHttpClient` package in order to use the Approov enabled service, alongside the `ApproovSDK` package which contains the native bindings. Select `Project` and `Manage NuGet Packages...` then select `Browse` and search for the `ApproovHttpClient` and `ApproovSDK` packages.
+The Approov SDK makes use of a custom `HttpClient` implementation, `ApproovHttpClient` and it is available as a NuGet package in the default repository `nuget.org`. The `ApproovHttpClient` includes platform specific code in the `ApproovService` class. The `ShapesApp` project require the `ApproovService` package in order to use the Approov enabled service. Select `Project` and `Manage NuGet Packages...` then select `Browse` and search for the `ApproovService` package.
 
 ![Add ApproovSDK Package](readme-images/add-nuget-packages.png)
 
-Select and install the latest available versions.
+Select and install the latest available version.
+
+## OKHTTP PACKAGE
+
+The `ApproovService` Android native implementation makes use of [OkHttp](https://square.github.io/okhttp/) library and it requires its inclusion in any project targetting Android. The package `Square.OkHttp3-4.9.3` from nuget.org is compatible with the latest version of the `ApproovService` package.
 
 
 ## USING THE APPROOV SERVICE
@@ -49,17 +52,17 @@ Please [read this](https://approov.io/docs/latest/approov-usage-documentation/#t
 
 ## CHECKING IT WORKS
 
-Initially you won't have set which API domains to protect, so the interceptor will not add anything. It will have called Approov though and made contact with the Approov cloud service. You will see logging from Approov saying `UNKNOWN_URL`.
+Initially you won't have set which API domains to protect, so the interceptor will not do anything. It will have called Approov though and made contact with the Approov cloud service. You will see logging from Approov saying `UNKNOWN_URL`.
 
 Your Approov onboarding email should contain a link allowing you to access [Live Metrics Graphs](https://approov.io/docs/latest/approov-usage-documentation/#metrics-graphs). After you've run your app with Approov integration you should be able to see the results in the live metrics within a minute or so. At this stage you could even release your app to get details of your app population and the attributes of the devices they are running upon.
 
 ## NEXT STEPS
 To actually protect your APIs there are some further steps. Approov provides two different options for protection:
 
-* [API PROTECTION](https://github.com/approov/quickstart-xamarin-httpclient/blob/master/API-PROTECTION.md): You should use this if you control the backend API(s) being protected and are able to modify them to ensure that a valid Approov token is being passed by the app. An [Approov Token](https://approov.io/docs/latest/approov-usage-documentation/#approov-tokens) is short lived crytographically signed JWT proving the authenticity of the call.
+* [API PROTECTION](https://github.com/approov/quickstart-net-maui/blob/master/API-PROTECTION.md): You should use this if you control the backend API(s) being protected and are able to modify them to ensure that a valid Approov token is being passed by the app. An [Approov Token](https://approov.io/docs/latest/approov-usage-documentation/#approov-tokens) is short lived crytographically signed JWT proving the authenticity of the call.
 
-* [SECRETS PROTECTION](https://github.com/approov/quickstart-xamarin-httpclient/blob/master/SECRETS-PROTECTION.md): If you do not control the backend API(s) being protected, and are therefore unable to modify it to check Approov tokens, you can use this approach instead. It allows app secrets, and API keys, to be protected so that they no longer need to be included in the built code and are only made available to passing apps at runtime.
+* [SECRETS PROTECTION](https://github.com/approov/quickstart-net-maui/blob/master/SECRETS-PROTECTION.md): If you do not control the backend API(s) being protected, and are therefore unable to modify it to check Approov tokens, you can use this approach instead. It allows app secrets, and API keys, to be protected so that they no longer need to be included in the built code and are only made available to passing apps at runtime.
 
 Note that it is possible to use both approaches side-by-side in the same app, in case your app uses a mixture of 1st and 3rd party APIs.
 
-See [REFERENCE](https://github.com/approov/quickstart-xamarin-httpclient/blob/master/REFERENCE.md) for a complete list of all of the `ApproovService` methods.
+See [REFERENCE](https://github.com/approov/quickstart-net-maui/blob/master/REFERENCE.md) for a complete list of all of the `ApproovService` methods.

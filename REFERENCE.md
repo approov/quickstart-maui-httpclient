@@ -29,13 +29,13 @@ It is possible to pass an empty `config` string to indicate that no initializati
 The preffered way to obtain an Approov enabled HttpClient, for both iOS and Android, is by using:
 
 ```C#
-ApproovHttpClient ApproovService.CreateHttpClient()
+ApproovService ApproovService.CreateHttpClient()
 ```
 
 If you prefer providing your own message handler, you can invoke:
 
 ```C#
-ApproovHttpClient ApproovService.CreateHttpClient(HttpMessageHandler handler)
+ApproovService ApproovService.CreateHttpClient(HttpMessageHandler handler)
 ```
 
 
