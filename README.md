@@ -1,4 +1,4 @@
-# APPROOV QUICKSTARTS: .NET HTTPCLIENT
+# APPROOV QUICKSTART: MAUI .NET HTTPCLIENT
 
 This quickstart is written specifically for mobile iOS and Android apps that are written in C# and .NET for making the API calls that you wish to protect with Approov. The sample code shown in this guide makes use of HttpClient in order to access network resources. If this is not your situation then check if there is a more relevant quickstart guide available.
 
@@ -6,8 +6,8 @@ This quickstart provides the basic steps for integrating Approov into your app. 
 
 To follow this guide you should have received an onboarding email for a trial or paid Approov account.
 
-Note that the minimum OS requirement for iOS is 10 and for Android the minimum SDK version is 21 (Android 5.0). You cannot use Approov in apps that need to support OS versions older than this.
-We will use the latest versions of the `nuget.org` package, `ApproovService-3.1.0`.  
+Note that the minimum OS requirement for iOS is 11 and for Android the minimum SDK version is 21 (Android 5.0). You cannot use Approov in apps that need to support OS versions older than this.
+We will use the latest versions of the `nuget.org` packages, `ApproovService-3.1.2` and `ApproovHttpClient.3.1.0`.  
 
 
 ## ADDING THE APPROOV SERVICE PACKAGE
@@ -16,7 +16,7 @@ The Approov SDK makes use of a custom `HttpClient` implementation, `ApproovHttpC
 
 ![Add ApproovSDK Package](readme-images/add-nuget-packages.png)
 
-Select and install the latest available version.
+Select and install the latest available version. Repeat the previous steps for the `ApproovHttpClient` package.
 
 ## OKHTTP PACKAGE
 
