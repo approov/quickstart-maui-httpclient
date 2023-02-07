@@ -8,7 +8,7 @@ This quickstart is written specifically for native iOS and Android apps that are
 * [Visual Studio](https://visualstudio.microsoft.com/vs/mac/) with Xamarin extensions (Mac version 8.10.25 is used in this guide)
 * The contents of the folder containing this README
 * An Apple mobile device with iOS 10 or higher or an Android 5.0+ device. Alternatively, iOS simulator or Android emulator would suffice
-* Nuget packages supporting the native Approov SDK: `ApproovService` version `3.1.2`, `ApproovHttpClient` version `3.1.0`  and `Square.OkHttp3` version `4.9.3` if targetting Android
+* Nuget packages supporting the native Approov SDK: `ApproovService` version `3.1.4`, `ApproovHttpClient` version `3.1.0`  and `Square.OkHttp3` version `4.9.3` if targetting Android
 
 ## RUNNING THE SHAPES APP WITHOUT APPROOV
 
