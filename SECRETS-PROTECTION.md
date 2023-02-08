@@ -58,7 +58,7 @@ With this in place the Approov interceptor should replace the `your-placeholder`
 
 Since earlier released versions of the app may have already leaked `your-secret`, you may wish to refresh the secret at some later point when any older version of the app is no longer in use. You can of course do this update over-the-air using Approov without any need to modify the app.
 
-You can see a [worked example](https://github.com/approov/quickstart-net-maui/blob/master/SHAPES-EXAMPLE.md#shapes-app-with-secrets-protection) for the Shapes app.
+You can see a [worked example](https://github.com/approov/quickstart-maui-httpclient/blob/master/SHAPES-EXAMPLE.md#shapes-app-with-secrets-protection) for the Shapes app.
 
 If the secret value is provided as a parameter in a URL query string with the name `your-param` then it is necessary to notify the `ApproovService` that the query parameter is subject to substitution. You do this by making the call once, after initialization:
 

@@ -2,7 +2,7 @@
 
 This quickstart is written specifically for mobile iOS and Android apps that are written in C# and .NET for making the API calls that you wish to protect with Approov. The sample code shown in this guide makes use of HttpClient in order to access network resources. If this is not your situation then check if there is a more relevant quickstart guide available.
 
-This quickstart provides the basic steps for integrating Approov into your app. A more detailed step-by-step guide using a [Shapes App Example](https://github.com/approov/quickstart-net-maui/blob/master/SHAPES-EXAMPLE.md) is also available.
+This quickstart provides the basic steps for integrating Approov into your app. A more detailed step-by-step guide using a [Shapes App Example](https://github.com/approov/quickstart-maui-httpclient/blob/master/SHAPES-EXAMPLE.md) is also available.
 
 To follow this guide you should have received an onboarding email for a trial or paid Approov account.
 
@@ -59,10 +59,10 @@ Your Approov onboarding email should contain a link allowing you to access [Live
 ## NEXT STEPS
 To actually protect your APIs there are some further steps. Approov provides two different options for protection:
 
-* [API PROTECTION](https://github.com/approov/quickstart-net-maui/blob/master/API-PROTECTION.md): You should use this if you control the backend API(s) being protected and are able to modify them to ensure that a valid Approov token is being passed by the app. An [Approov Token](https://approov.io/docs/latest/approov-usage-documentation/#approov-tokens) is short lived crytographically signed JWT proving the authenticity of the call.
+* [API PROTECTION](https://github.com/approov/quickstart-maui-httpclient/blob/master/API-PROTECTION.md): You should use this if you control the backend API(s) being protected and are able to modify them to ensure that a valid Approov token is being passed by the app. An [Approov Token](https://approov.io/docs/latest/approov-usage-documentation/#approov-tokens) is short lived crytographically signed JWT proving the authenticity of the call.
 
-* [SECRETS PROTECTION](https://github.com/approov/quickstart-net-maui/blob/master/SECRETS-PROTECTION.md): If you do not control the backend API(s) being protected, and are therefore unable to modify it to check Approov tokens, you can use this approach instead. It allows app secrets, and API keys, to be protected so that they no longer need to be included in the built code and are only made available to passing apps at runtime.
+* [SECRETS PROTECTION](https://github.com/approov/quickstart-maui-httpclient/blob/master/SECRETS-PROTECTION.md): If you do not control the backend API(s) being protected, and are therefore unable to modify it to check Approov tokens, you can use this approach instead. It allows app secrets, and API keys, to be protected so that they no longer need to be included in the built code and are only made available to passing apps at runtime.
 
 Note that it is possible to use both approaches side-by-side in the same app, in case your app uses a mixture of 1st and 3rd party APIs.
 
-See [REFERENCE](https://github.com/approov/quickstart-net-maui/blob/master/REFERENCE.md) for a complete list of all of the `ApproovService` methods.
+See [REFERENCE](https://github.com/approov/quickstart-maui-httpclient/blob/master/REFERENCE.md) for a complete list of all of the `ApproovService` methods.
