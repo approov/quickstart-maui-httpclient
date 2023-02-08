@@ -1,4 +1,4 @@
-# APPROOV QUICKSTART: MAUI .NET HTTPCLIENT
+# APPROOV QUICKSTART: MAUI HTTPCLIENT
 
 This quickstart is written specifically for mobile iOS and Android apps that are written in C# and .NET for making the API calls that you wish to protect with Approov. The sample code shown in this guide makes use of HttpClient in order to access network resources. If this is not your situation then check if there is a more relevant quickstart guide available.
 
