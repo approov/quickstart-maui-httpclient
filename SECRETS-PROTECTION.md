@@ -167,8 +167,6 @@ This initiates the process of fetching the required information as a background 
 You may wish to do an early check in your app to present a warning to the user if it is not going to be able to access secrets because it fails the attestation process. Here is an example of calling the appropriate method in `ApproovService`:
 
 ```C#
-....
-
 try {
     ApproovService.Precheck();
 }
