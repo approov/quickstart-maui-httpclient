@@ -78,15 +78,13 @@ approov secstrings -setEnabled
 Here is an example of calling the appropriate method in `ApproovService`:
 
 ```C#
-
-...
-
 try {
     ApproovService.Precheck();
 }
 catch(RejectionException e) {
-    // failure due to the attestation being rejected, e.ARC and e.RejectionReasons may be used to present information to the user
-    // (note e.RejectionReasons is only available if the feature is enabled, otherwise it is always an empty string)
+    // failure due to the attestation being rejected, e.ARC and e.RejectionReasons may be used
+    // to present information to the user (note e.RejectionReasons is only available if the feature
+    // is enabled, otherwise it is always an empty string)
 }
 catch(NetworkingErrorException e) {
     // failure due to a potentially temporary networking issue, allow for a user initiated retry
