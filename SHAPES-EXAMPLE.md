@@ -147,7 +147,7 @@ Select the `Build` menu and then `Archive for Publishing`. Once the archive file
 
 ![Build IPA Result](readme-images/build-ipa-result.png)
 
-Install the `ApproovShapes.ipa` or `.apk` file that you just registered on the device. You will need to remove the old app from the device first.
+Install the `ApproovShapes.ipa` or `.apk` file on the device. You will need to remove the old app from the device first.
 If using Mac OS Catalina and targeting iOS, simply drag the `ipa` file to the device. Alternatively, using `Xcode` you can select `Window`, then `Devices and Simulators` and after selecting your device click on the small `+` sign to locate the `ipa` archive you would like to install. For Android you will need to use the command line tools provided by Google.
 
 ![Install IPA Visual Studio](readme-images/install-ipa.png)
