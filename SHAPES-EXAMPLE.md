@@ -5,14 +5,15 @@ This quickstart is written specifically for native iOS and Android apps that are
 ## WHAT YOU WILL NEED
 * Access to a trial or paid Approov account
 * The `approov` command line tool [installed](https://approov.io/docs/latest/approov-installation/) with access to your account
-* [Visual Studio](https://visualstudio.microsoft.com/vs/mac/) with Xamarin extensions (Mac version 8.10.25 is used in this guide)
+* [Visual Studio](https://visualstudio.microsoft.com/vs) for Windows (2022 version 17.8.3 used in this guide)
+* Mac OS machine with a recent version of Xcode and Mac OS to be accessed from Visual Studio using the `Pair To Mac` function if building iOS ShapesApp
 * The contents of the folder containing this README
-* An Apple mobile device with iOS 10 or higher or an Android 5.0+ device. Alternatively, iOS simulator or Android emulator would suffice
-* Nuget packages supporting the native Approov SDK: `ApproovService` version `3.1.4`, `ApproovHttpClient` version `3.1.0`  and `Square.OkHttp3` version `4.9.3` if targetting Android
+* An Apple mobile device with iOS 11 or higher or an Android 5.0+ device. Alternatively, iOS simulator or Android emulator would suffice
+* Nuget packages supporting the native Approov SDK: `ApproovService` version `3.2.0`, `ApproovHttpClient` version `3.2.0`
 
 ## RUNNING THE SHAPES APP WITHOUT APPROOV
 
-Open the `ShapesApp.sln` solution in the `ShapesApp` folder using `File->Open` in Visual Studio. There are three projects in the solution, a shared `ShapesApp` project, one targeting iOS, `ShapesApp.iOS` and another targeting Android OS, `ShapesApp.Android`. We will use the iOS version in this document however there are minor differences with the Android application, i.e. codesigning and generating `.ipa` or `.apk` files. Regardless of which OS you choose to target, the source code is shared and is available in the common file `MainPage.xaml.cs`. You can target your prefered platform by selecting the Build target of Visual Studio.
+Open the `ShapesApp.sln` solution in the `ShapesApp` folder using `File->Open` in Visual Studio. The application targets both iOS and Android. We will target iOS in this document however there are minor differences with the Android application, i.e. codesigning and generating `.ipa` or `.apk` files. Regardless of which OS you choose to target, the source code is shared and is available in the common file `MainPage.xaml.cs`. You can target your prefered platform by selecting the Build target of Visual Studio.
 
 If running the iOS application, select the `Info.plist` file and change the Bundle Identifier to contain a unique string (i.e. your company name), since Apple will reject the default one. Select the appropriate device/simulator target and run the ShapesApp application.
 
@@ -38,7 +39,7 @@ This contacts `https://shapes.approov.io/v1/shapes` to get the name of a random 
 
 ## ADD THE APPROOV SDK
 
-The Approov SDK is available as a NuGet package in the default `nuget.org` repository and is conveniently named `ApproovService`. Select `Project` and `Manage NuGet Packages...` then select `Browse` and search for the `ApproovService` package. Additionally, you need to remove any reference to `System.Net.Http` package from the `using` directive, since a custom subclass, `ApproovHttpClient` implements its functionality and is part of the `ApproovHttpClient` package. The Android native bindings provided by the `ApproovService` make use of the `OkHttp` network implementation and so the `Square.OkHttp3-4.9.3` needs also to be installed.
+The Approov SDK is available as a NuGet package in the default `nuget.org` repository and is conveniently named `ApproovService`. Select `Project` and `Manage NuGet Packages...` then select `Browse` and search for the `ApproovHttpClient` package. Additionally, you might need to remove any reference to `System.Net.Http` package from the `using` directive, since a custom subclass, `ApproovHttpClient` implements its functionality and is part of the `ApproovService` package.
 
 Your project structure should now look like this:
 
@@ -105,7 +106,7 @@ static string endpointVersion = "v3";
 ### ADD YOUR SIGNING CERTIFICATE TO APPROOV
 You should add the signing certificate used to sign apps so that Approov can recognize your app as being official.
 
-Codesigning must also be enabled, if you need assistance please check [Microsoft's codesigning support](https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/provisioning/) or [Android deploy signing](https://docs.microsoft.com/en-us/xamarin/android/deploy-test/signing/?tabs=macos). Make sure you have selected the correct project (Shapes.App.iOS), build mode (Release) and target device (Generic Device) settings.
+Codesigning must also be enabled, if you need assistance please check [Microsoft's codesigning support](https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/provisioning/) or [Android deploy signing](https://docs.microsoft.com/en-us/xamarin/android/deploy-test/signing/?tabs=macos). 
 
 ### Android
 Add the local certificate used to sign apps in Android Studio. The following assumes it is in PKCS12 format:
@@ -139,16 +140,16 @@ If it is not possible to download the correct certificate from the portal then i
 
 ## RUNNING THE SHAPES APP WITH APPROOV
 
-Make sure you have selected the correct project (Shapes.App.iOS), build mode (Release) and target device (Generic Device) settings. 
+Make sure you have selected the correct build mode (Release) and target device (Generic Device) settings. 
 
 ![Target Device](readme-images/target-device.png)
 
-Select the `Build` menu and then `Archive for Publishing`. Once the archive file is ready you can either `Ad Hoc`, `Enterprise` or `Play Store` depending on the platform, sign it and save it to disk.
+Select the `Build` menu and then `Publish`. Once the archive file is ready you can either `Ad Hoc`, `Enterprise` or `Play Store` depending on the platform, sign it and save it to disk.
 
 ![Build IPA Result](readme-images/build-ipa-result.png)
 
 Install the `ApproovShapes.ipa` or `.apk` file on the device. You will need to remove the old app from the device first.
-If using Mac OS Catalina and targeting iOS, simply drag the `ipa` file to the device. Alternatively, using `Xcode` you can select `Window`, then `Devices and Simulators` and after selecting your device click on the small `+` sign to locate the `ipa` archive you would like to install. For Android you will need to use the command line tools provided by Google.
+If using a recent Mac OS Version (greater than Catalina) and targeting iOS, simply drag the `ipa` file to the device. Alternatively, using `Xcode` you can select `Window`, then `Devices and Simulators` and after selecting your device click on the small `+` sign to locate the `ipa` archive you would like to install. For Android you will need to use the command line tools provided by Google.
 
 ![Install IPA Visual Studio](readme-images/install-ipa.png)
 

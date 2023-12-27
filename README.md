@@ -8,7 +8,7 @@ To follow this guide you should have received an onboarding email for a trial or
 
 Note that the minimum OS requirement for iOS is 11 and for Android the minimum SDK version is 21 (Android 5.0). You cannot use Approov in apps that need to support OS versions older than this.
 
-We will use the latest versions of the `nuget.org` packages, `ApproovService-3.1.4` and `ApproovHttpClient.3.1.0`.  
+We will use the latest versions of the `nuget.org` packages, `ApproovService-3.2.0` and `ApproovHttpClient-3.2.0`.
 
 ## ADDING THE APPROOV SERVICE PACKAGE
 
@@ -16,11 +16,7 @@ The Approov SDK makes use of a custom `HttpClient` implementation, `ApproovHttpC
 
 ![Add ApproovSDK Package](readme-images/add-nuget-packages.png)
 
-Select and install the latest available version. Repeat the previous steps for the `ApproovHttpClient` package.
-
-## OKHTTP PACKAGE
-
-The `ApproovService` Android native implementation makes use of [OkHttp](https://square.github.io/okhttp/) library and it requires its inclusion in any project targetting Android. The package `Square.OkHttp3-4.9.3` from nuget.org is compatible with the latest version of the `ApproovService` package.
+Select and install the latest available version. Repeat the previous steps for the `ApproovService` package.
 
 
 ## USING THE APPROOV SERVICE
