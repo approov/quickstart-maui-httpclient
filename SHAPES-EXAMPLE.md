@@ -1,6 +1,6 @@
 # SHAPES EXAMPLE
 
-This quickstart is written specifically for native iOS and Android apps that are written in C# for making the API calls that you wish to protect with Approov. This quickstart provides a step-by-step example of integrating Approov into an app using a simple `Shapes` example that shows a geometric shape based on a request to an API backend that can be protected with Approov.
+This quickstart is written specifically for iOS and Android apps using .NET MAUI for making the API calls that you wish to protect with Approov. This quickstart provides a step-by-step example of integrating Approov into an app using a simple `Shapes` example that shows a geometric shape based on a request to an API backend that can be protected with Approov. Please note that this example uses NET8 but the `ApproovService` package as of version `3.2.0` supports also NET7.
 
 ## WHAT YOU WILL NEED
 * Access to a trial or paid Approov account
@@ -9,7 +9,7 @@ This quickstart is written specifically for native iOS and Android apps that are
 * Mac OS machine with a recent version of Xcode and Mac OS to be accessed from Visual Studio using the `Pair To Mac` function if building iOS ShapesApp
 * The contents of the folder containing this README
 * An Apple mobile device with iOS 11 or higher or an Android 5.0+ device. Alternatively, iOS simulator or Android emulator would suffice
-* Nuget packages supporting the native Approov SDK: `ApproovService` version `3.2.0`, `ApproovHttpClient` version `3.2.0`
+* Nuget package supporting the native Approov SDK: `ApproovService` version `3.2.0`
 
 ## RUNNING THE SHAPES APP WITHOUT APPROOV
 
@@ -39,7 +39,7 @@ This contacts `https://shapes.approov.io/v1/shapes` to get the name of a random 
 
 ## ADD THE APPROOV SDK
 
-The Approov SDK is available as a NuGet package in the default `nuget.org` repository and is conveniently named `ApproovService`. Select `Project` and `Manage NuGet Packages...` then select `Browse` and search for the `ApproovHttpClient` package. Additionally, you might need to remove any reference to `System.Net.Http` package from the `using` directive, since a custom subclass, `ApproovHttpClient` implements its functionality and is part of the `ApproovService` package.
+The Approov SDK is available as a NuGet package in the default `nuget.org` repository and is conveniently named `ApproovService`. Select `Project` and `Manage NuGet Packages...` then select `Browse` and search for the `ApproovService` package. Additionally, you might need to remove any reference to `System.Net.Http` package from the `using` directive, since a custom subclass, `ApproovHttpClient` implements its functionality and is part of the `ApproovService` package.
 
 Your project structure should now look like this:
 
