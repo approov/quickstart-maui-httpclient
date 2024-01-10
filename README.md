@@ -1,5 +1,10 @@
 # APPROOV QUICKSTART: MAUI HTTPCLIENT
 
+```
+Updated version of this package exist supporting NET7 and NET8. Unfortunately, the nuget.exe command lacks support for usb and cloud based hardware crypto modules and we are unable to provide the signed packages. Please contact support@approov.io for more information.
+Please, check https://github.com/NuGet/Home/issues/11948 for updated info. 
+```
+
 This quickstart is written specifically for mobile iOS and Android apps that are written in C# and .NET for making the API calls that you wish to protect with Approov. The sample code shown in this guide makes use of HttpClient in order to access network resources. If this is not your situation then check if there is a more relevant quickstart guide available.
 
 This page provides all the steps for integrating Approov into your app. Additionally, a step-by-step tutorial guide using our [Shapes App Example](https://github.com/approov/quickstart-maui-httpclient/blob/master/SHAPES-EXAMPLE.md) is also available.
@@ -8,11 +13,11 @@ To follow this guide you should have received an onboarding email for a trial or
 
 Note that the minimum OS requirement for iOS is 11 and for Android the minimum SDK version is 21 (Android 5.0). You cannot use Approov in apps that need to support OS versions older than this.
 
-We will use the latest versions of the `nuget.org` packages, `ApproovService-3.2.0` and `ApproovHttpClient-3.2.0`.
+We will use the latest versions of the `nuget.org` package `ApproovService-3.2.0`.
 
 ## ADDING THE APPROOV SERVICE PACKAGE
 
-The Approov SDK makes use of a custom `HttpClient` implementation, `ApproovHttpClient` and it is available as a NuGet package in the default repository `nuget.org`. The `ApproovHttpClient` includes platform specific code in the `ApproovService` class. The `ShapesApp` project require the `ApproovService` package in order to use the Approov enabled service. Select `Project` and `Manage NuGet Packages...` then select `Browse` and search for the `ApproovService` package.
+The Approov SDK makes use of a custom `HttpClient` implementation, `ApproovHttpClient` and it includes platform specific code in the `ApproovService` class. The `ShapesApp` project require the `ApproovService` package in order to use the Approov enabled service. Select `Project` and `Manage NuGet Packages...` then select `Browse` and search for the `ApproovService` package.
 
 ![Add ApproovSDK Package](readme-images/add-nuget-packages.png)
 
